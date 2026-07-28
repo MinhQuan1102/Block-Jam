@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class Initializer : MonoBehaviour
+namespace Core
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [DefaultExecutionOrder(-999)]
+    public class Initializer : MonoBehaviour
     {
-        
+        private static Initializer initializer;
+        [SerializeField] ProjectInitSettings initSettings;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
