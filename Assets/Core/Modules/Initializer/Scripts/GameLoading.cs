@@ -144,6 +144,10 @@ namespace Core
 
             loadingGraphics.SetLoadingState(1.0f, "Completed");
 
+            loadingGraphics.OnLoadingFinished();
+
+            Destroy(gameObject);
+
         }
 
         public void RetryConnection()

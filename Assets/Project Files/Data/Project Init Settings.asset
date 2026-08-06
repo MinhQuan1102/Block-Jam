@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a9c748febb744aea9482cfe3e08bc2, type: 3}
   m_Name: Project Init Settings
   m_EditorClassIdentifier: 
-  modules: []
+  modules:
+  - {fileID: 0}

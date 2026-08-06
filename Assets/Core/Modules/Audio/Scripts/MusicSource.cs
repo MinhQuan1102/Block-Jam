@@ -21,7 +21,7 @@ namespace Core
 
             volumeMultiplier = audioSource.volume;
 
-            audioSource.volume = AudioController.GetVolume(AudioType.Music) * volumeMultiplier;
+            // audioSource.volume = AudioController.GetVolume(AudioType.Music) * volumeMultiplier;
             AudioController.VolumeChanged += OnVolumeChanged;
         }
 

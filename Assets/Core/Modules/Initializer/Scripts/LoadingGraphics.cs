@@ -59,8 +59,15 @@ namespace Core
 
         private void OnRetryButtonClicked()
         {
-            Debug.Log("RETRY ");
             loadingController.RetryConnection();
+        }
+
+        public void OnLoadingFinished()
+        {
+                Destroy(gameObject);
+            // canvasGroup.DOFade(0.0f, 0.6f, unscaledTime: true).OnComplete(delegate
+            // {
+            // });
         }
     }
 }
