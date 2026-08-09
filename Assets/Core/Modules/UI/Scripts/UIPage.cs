@@ -29,6 +29,73 @@ namespace Core
             graphicRaycaster = GetComponent<GraphicRaycaster>();
         }
 
+        public void PreparePage()
+        {
+            isPageDisplayed = false;
+            canvas.enabled = false;
+
+            pageElements = new IUIPageElement[registeredElements.Length];
+            if(!pageElements.IsNullOrEmpty())
+            {
+                for (int i = 0; i < pageElements.Length; i++)
+                {
+                    pageElements[i] = (IUIPageElement)registeredElements[i];
+                    pageElements[i].Init(this);
+                }
+            }
+        }
+
+        public abstract void Init();
+        public abstract void PlayShowAnimation();
+        public abstract void PlayHideAnimation();
+
+        public void EnableCanvas()
+        {
+            isPageDisplayed = true;
+
+            canvas.enabled = true;
+
+            if(!pageElements.IsNullOrEmpty())
+            {
+                for (int i = 0; i < pageElements.Length; i++)
+                {
+                    pageElements[i]?.OnPageStateChanged(true);
+                }
+            }
+
+#if UNITY_EDITOR
+            name = string.Format("{0} (Active)", defaultName);
+#endif
+        }
+
+        public void DisableCanvas()
+        {
+            isPageDisplayed = false;
+
+            canvas.enabled = false;
+
+            for (int i = 0; i < pageElements.Length; i++)
+            {
+                pageElements[i]?.OnPageStateChanged(false);
+            }
+
+#if UNITY_EDITOR
+            name = defaultName;
+#endif
+        }
+
+        public virtual void Unload()
+        {
+            isPageDisplayed = false;
+
+            canvas.enabled = false;
+        }
+
+        public void MarkAsCached()
+        {
+            isCached = true;
+        }
+
         public bool OnPrefabSaving()
         {
             Component[] cachedPageElements = GetComponentsInChildren(typeof(IUIPageElement));
@@ -64,7 +131,41 @@ namespace Core
 
         public void OnSceneSaving()
         {
-            throw new System.NotImplementedException();
+            void SaveElements(Component[] elements)
+            {
+                registeredElements = elements;
+
+                RuntimeEditorUtils.SetDirty(this);
+            }
+
+            Component[] cachedPageElements = GetComponentsInChildren(typeof(IUIPageElement));
+
+            if (registeredElements == null || registeredElements.Length != cachedPageElements.Length)
+            {
+                SaveElements(cachedPageElements);
+
+                return;
+            }
+
+            for (int i = 0; i < registeredElements.Length; i++)
+            {
+                if (registeredElements[i] == null)
+                {
+                    SaveElements(cachedPageElements);
+
+                    return;
+                }
+            }
+
+            for (int i = 0; i < cachedPageElements.Length; i++)
+            {
+                if (!ReferenceEquals(registeredElements[i], cachedPageElements[i]))
+                {
+                    SaveElements(cachedPageElements);
+
+                    return;
+                }
+            }
         }
     }
 

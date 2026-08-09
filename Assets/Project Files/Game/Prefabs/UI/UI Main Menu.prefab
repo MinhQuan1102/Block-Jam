@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 286264402259016460}
   - component: {fileID: 3566086213993761193}
   - component: {fileID: 5488010010562818581}
-  - component: {fileID: 815218237677005211}
+  - component: {fileID: 5470399883925768300}
   m_Layer: 0
   m_Name: UI Main Menu
   m_TagString: Untagged
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &815218237677005211
+--- !u!114 &5470399883925768300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1626,9 +1626,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6533705518958725274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cd44912059d4d0c967f7ebc22eebab, type: 3}
+  m_Script: {fileID: 11500000, guid: 584747a9ff0c84a4e96e93fd615d775f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  registeredElements: []
 --- !u!1 &6622766600906909021
 GameObject:
   m_ObjectHideFlags: 0

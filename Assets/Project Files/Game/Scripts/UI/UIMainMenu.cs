@@ -1,16 +1,24 @@
+using Core;
 using UnityEngine;
 
-public class UIMainMenu : MonoBehaviour
+namespace BlockJam
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class UIMainMenu : UIPage
     {
-        
+        public override void Init()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void PlayHideAnimation()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void PlayShowAnimation()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

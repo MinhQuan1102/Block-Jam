@@ -29,7 +29,10 @@ namespace Core
 
 #endif
 
+            Overlay.Bind(new Overlay(gameObject));
+
             systemMessage.Init();
+            DontDestroyOnLoad(gameObject);
         }
 
         public void InitModules()
