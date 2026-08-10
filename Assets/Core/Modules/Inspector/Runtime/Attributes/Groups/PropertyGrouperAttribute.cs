@@ -1,0 +1,11 @@
+﻿using System;
+
+namespace Core
+{
+    public class PropertyGrouperAttribute : BaseAttribute
+    {
+        public PropertyGrouperAttribute(Type targetAttributeType) : base(targetAttributeType)
+        {
+        }
+    }
+}
