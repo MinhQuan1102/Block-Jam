@@ -1,16 +1,35 @@
+using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CurrencyUIPanelSimple : MonoBehaviour
+namespace Core
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Serializable]
+    public class CurrencyUIPanelSimple : MonoBehaviour
     {
-        
-    }
+        [SerializeField] CurrencyType currencyType;
 
-    // Update is called once per frame
-    void Update()
-    {
+        [Space]
+        [SerializeField] bool updateOnChange = true;
+        [SerializeField] bool useFormattedAmount = true;
+
+        [Space]
+        [SerializeField] TextMeshProUGUI text;
+        [SerializeField] Image icon;
+        [SerializeField] Button addButton;
+
+        public string Text { get => text.text; set => text.text = value; }
+        public Sprite Icon { get => icon.sprite; set => icon.sprite = value; }
+
+        public Image Image => icon;
+        public Button AddButton => addButton;
+
+        private Currency currency;
+        public Currency Currency => currency;
         
+        private RectTransform rectTransformRef;
+        public RectTransform RectTransform => rectTransformRef;
     }
+    
 }

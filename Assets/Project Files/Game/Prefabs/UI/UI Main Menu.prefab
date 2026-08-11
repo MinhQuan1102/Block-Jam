@@ -1630,6 +1630,216 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   registeredElements: []
+  noAdsButton:
+    rect: {fileID: 6702499862193003973}
+    button: {fileID: 7373701235043666175}
+    showStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0010876972
+        value: 0.0023277998
+        inSlope: 2.3251798
+        outSlope: 2.3251798
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.027800104
+      - serializedVersion: 3
+        time: 0.80164313
+        value: 1.0553293
+        inSlope: -0.0075463476
+        outSlope: -0.0075463476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09091254
+        outWeight: 0.06290307
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: -0.64081717
+        outSlope: -0.64081717
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14692812
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    hideStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.00045064278
+        value: 0.0033653975
+        inSlope: -0.52902496
+        outSlope: -0.52902496
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.22894399
+      - serializedVersion: 3
+        time: 0.20043507
+        value: -0.052389175
+        inSlope: -0.0061826375
+        outSlope: -0.0061826375
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09348353
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: 2.8336585
+        outSlope: 2.8336585
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.021454018
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showHideDuration: 0.45
+  storeButton:
+    rect: {fileID: 8382288538035119187}
+    button: {fileID: 7554219962660152293}
+    showStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0010876972
+        value: 0.0023277998
+        inSlope: 2.3251798
+        outSlope: 2.3251798
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.027800104
+      - serializedVersion: 3
+        time: 0.80164313
+        value: 1.0553293
+        inSlope: -0.0075463476
+        outSlope: -0.0075463476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09091254
+        outWeight: 0.06290307
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: -0.64081717
+        outSlope: -0.64081717
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14692812
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    hideStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.00045064278
+        value: 0.0033653975
+        inSlope: -0.52902496
+        outSlope: -0.52902496
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.22894399
+      - serializedVersion: 3
+        time: 0.20043507
+        value: -0.052389175
+        inSlope: -0.0061826375
+        outSlope: -0.0061826375
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09348353
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: 2.8336585
+        outSlope: 2.8336585
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.021454018
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showHideDuration: 0.45
+  skinsStoreButton:
+    rect: {fileID: 6933447456213062892}
+    button: {fileID: 947034723870925105}
+    showStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0010876972
+        value: 0.0023277998
+        inSlope: 2.3251798
+        outSlope: 2.3251798
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.027800104
+      - serializedVersion: 3
+        time: 0.80164313
+        value: 1.0553293
+        inSlope: -0.0075463476
+        outSlope: -0.0075463476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09091254
+        outWeight: 0.06290307
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: -0.64081717
+        outSlope: -0.64081717
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14692812
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    hideStoreAdButtonsCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.00045064278
+        value: 0.0033653975
+        inSlope: -0.52902496
+        outSlope: -0.52902496
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.22894399
+      - serializedVersion: 3
+        time: 0.20043507
+        value: -0.052389175
+        inSlope: -0.0061826375
+        outSlope: -0.0061826375
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09348353
+      - serializedVersion: 3
+        time: 1.0007324
+        value: 0.99822235
+        inSlope: 2.8336585
+        outSlope: 2.8336585
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.021454018
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showHideDuration: 0.45
 --- !u!1 &6622766600906909021
 GameObject:
   m_ObjectHideFlags: 0
