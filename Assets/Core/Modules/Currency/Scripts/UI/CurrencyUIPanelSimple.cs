@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 namespace Core
 {
-    [Serializable]
+[Serializable]
+    [RequireComponent(typeof(RectTransform))]
     public class CurrencyUIPanelSimple : MonoBehaviour
     {
         [SerializeField] CurrencyType currencyType;
@@ -30,6 +31,59 @@ namespace Core
         
         private RectTransform rectTransformRef;
         public RectTransform RectTransform => rectTransformRef;
+
+        private bool isInitialized;
+
+        private void Awake()
+        {
+            rectTransformRef = GetComponent<RectTransform>();
+            Init();
+        }
+
+        public void Init()
+        {
+            if (isInitialized) return;
+
+            currency = CurrencyController.GetCurrency(currencyType);
+
+            icon.sprite = currency.Icon;
+
+            isInitialized = true;
+
+            Redraw();
+            Activate();
+        }
+
+        public void Redraw()
+        {
+            text.text = useFormattedAmount ? currency.AmountFormatted : currency.Amount.ToString();
+        }
+
+        public void SetAmount(int amount, bool format = true)
+        {
+            text.text = format ? CurrencyHelper.Format(amount) : amount.ToString();
+        }
+
+        public void Activate()
+        {
+            if(updateOnChange)
+            {
+                currency.OnCurrencyChanged += OnCurrencyAmountChanged;
+            }
+        }
+
+        public void Disable()
+        {
+            if(updateOnChange)
+            {
+                currency.OnCurrencyChanged -= OnCurrencyAmountChanged;
+            }
+        }
+
+        private void OnCurrencyAmountChanged(Currency currency, int amountDifference)
+        {
+            text.text = useFormattedAmount ? currency.AmountFormatted : currency.Amount.ToString();
+        }
     }
     
 }

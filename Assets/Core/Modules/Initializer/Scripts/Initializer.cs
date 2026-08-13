@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Core
 {
@@ -10,6 +11,7 @@ namespace Core
         [SerializeField] SDKInitializer sdkInitializer;
         [SerializeField] SystemMessage systemMessage;
         [SerializeField] MusicSource globalMusicSource;
+        [SerializeField] EventSystem eventSystem;
         public static GameObject GameObject { get; private set; }
         public static Transform Transform { get; private set; }
         public static ProjectInitSettings InitSettings { get; private set; }
@@ -26,7 +28,7 @@ namespace Core
 #if MODULE_INPUT_SYSTEM
 
 #else
-
+            eventSystem.gameObject.GetOrSetComponent<StandaloneInputModule>();
 #endif
 
             Overlay.Bind(new Overlay(gameObject));

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15dfe772e8d804429be8745cc04e7e58, type: 3}
   m_Name: Core.CurrencyInitModule
   m_EditorClassIdentifier: 
-  currenciesDatabase: {fileID: 0}
+  currenciesDatabase: {fileID: 11400000, guid: 428df1592f1204414acd63ac6d953085, type: 2}
 --- !u!114 &-739285594851332746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a53d9d1ec4944648bbf471b264fa8e, type: 3}
   m_Name: Core.AudioInitModule
   m_EditorClassIdentifier: 
-  audioSettings: {fileID: 0}
+  audioSettings: {fileID: 11400000, guid: f80f21250769547559303f49139b79fb, type: 2}
   audioSourcesPoolSize: 4
   maxDistance: 30
   spread: 180
@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: Project Init Settings
   m_EditorClassIdentifier: 
   modules:
+  - {fileID: 8376249374062691474}
   - {fileID: 232394193329238946}
   - {fileID: -739285594851332746}
   - {fileID: 3982733272417165122}
@@ -99,4 +100,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ae765a38ba645509bee05212461895, type: 3}
   m_Name: BlockJam.GameInitModule
   m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 9b13020bb0bd84a3ea0ddb984ba0cc1e, type: 2}
+--- !u!114 &8376249374062691474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c6fc1ae228f45d6b02b75b509197b2, type: 3}
+  m_Name: Core.SaveInitModule
+  m_EditorClassIdentifier: 
+  autoSaveDelay: 0
+  cleanSaveStart: 0
+  webGLPrefix: build_20260223_180600

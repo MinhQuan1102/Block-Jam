@@ -106,6 +106,41 @@ namespace Core
 
             cachedPages.Init(this);
         }
+
+        private void RecalculateScaleFactor(CanvasScaler canvasScaler)
+        {
+            Vector2 refRes = CanvasScaler.referenceResolution;
+            float match = CanvasScaler.matchWidthOrHeight;
+
+            float screenRatio = (float)Screen.width / Screen.height;
+            float targetRatio = refRes.x / refRes.y;
+
+            if (screenRatio > targetRatio)
+            {
+                ScaleFactor = Screen.height / refRes.y;
+            }
+            else
+            {
+                ScaleFactor = Screen.width / refRes.x;
+            }
+        }
+
+        public void InitPages()
+        {
+            RecalculateScaleFactor(CanvasScaler);
+
+            // Refresh notch save area
+            // notchSaveArea.Init(new Vector2(Screen.width / ScaleFactor, Screen.height / ScaleFactor));
+
+            // Initialize currency cloud
+            // currencyCloud.Init();
+
+            for (int i = 0; i < pages.Count; i++)
+            {
+                pages[i].PreparePage();
+                pages[i].Init();
+            }
+        }
         
         public static void ShowPage<T>() where T : UIPage
         {
@@ -288,6 +323,29 @@ namespace Core
             }
 
             return pagesLink[pageType].IsPageDisplayed;
+        }
+
+        public static void OnPageOpened(UIPage page)
+        {
+            PageOpened?.Invoke(page, page.GetType());
+
+            if(page is IPopupWindow popup)
+            {
+                if (!uiController.popupWindows.Contains(popup))
+                {
+                    uiController.popupWindows.Add(popup);
+
+                    if (popup is IPausePopup pausePopup)
+                    {
+                        uiController.pausePopups.Add(pausePopup);
+
+                        if (uiController.usePausePopups)
+                            Time.timeScale = 0.0f;
+                    }
+
+                    PopupOpened?.Invoke(popup, true);
+                }
+            }
         }
 
         public static void OnPageClosed(UIPage page)

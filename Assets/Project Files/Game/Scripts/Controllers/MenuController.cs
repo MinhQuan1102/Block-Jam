@@ -14,6 +14,8 @@ namespace BlockJam
                 Debug.LogError("GameData is null. Please add the Game Settings component to the Project Init Settings and link Game Data scriptable object.");
 
             uiController.Init();
+
+            uiController.InitPages();
         } 
 
         private void Start()

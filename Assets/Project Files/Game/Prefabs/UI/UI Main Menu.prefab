@@ -1630,6 +1630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   registeredElements: []
+  safeAreaRectTransform: {fileID: 2834352085272810352}
+  coinsPanel: {fileID: 1253459558546860266}
   noAdsButton:
     rect: {fileID: 6702499862193003973}
     button: {fileID: 7373701235043666175}
@@ -2641,6 +2643,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad36f9da548e14cb59945e2c8dd788ac, type: 3}
+--- !u!114 &1253459558546860266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5789090853523527967, guid: ad36f9da548e14cb59945e2c8dd788ac, type: 3}
+  m_PrefabInstance: {fileID: 4698333746682360309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afb5e30a3deb42a8821f20083f540ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1818659351212712975 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6345282346979333626, guid: ad36f9da548e14cb59945e2c8dd788ac, type: 3}
